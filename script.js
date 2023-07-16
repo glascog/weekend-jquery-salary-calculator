@@ -6,8 +6,12 @@ function onReady() {
     // Handlers go here
     $(".submitButton").on("click", handleSubmit);
     $("#tableBody").on("click", "#deleteButton", handleDelete);
+    // need handler here to delete total monthly sum?
 
 }
+
+// Create variable for total monthly salary amount
+let totalMonthly = 0;
 
 // Functions go here
 function handleDelete() {
@@ -36,8 +40,8 @@ function handleSubmit(event) {
     console.log('jobTitleText', jobTitleText);
 
     // Retrieve author annual salary from input box
-    const annualSalaryText = $('#annualSalary').val();
-    console.log('annualSalaryText', annualSalaryText);
+    let annualSalaryNumber = $('#annualSalary').val();
+    console.log('annualSalaryNumber', annualSalaryNumber);
 
     // Append new info to dom from captured input
     $('#tableBody').append(`
@@ -46,7 +50,7 @@ function handleSubmit(event) {
         <td>${lastNameText}</td>
         <td>${idNumberText}</td>
         <td>${jobTitleText}</td>
-        <td>${annualSalaryText}</td>
+        <td>${annualSalaryNumber}</td>
         <td><button id="deleteButton">Delete</button></td>
     </tr>`);
 
@@ -56,5 +60,16 @@ function handleSubmit(event) {
     $('#idNumber').val("");
     $('#jobTitle').val("");
     $('#annualSalary').val("");
-    
+   
+    // Set variable for monthly salary amount
+    totalMonthly += annualSalaryNumber/12
+
+    // Replace salary amounts to total monthly footer
+    $('#totalMonthly').text(` $${totalMonthly}`);
+
+    // Create conditional that changes background color of total monthly amount when exceeds 20K
+    if(totalMonthly > 20000) {
+      $('footer').css("background-color", "red");
+    }
 }
+

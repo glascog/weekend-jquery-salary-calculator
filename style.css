@@ -68,13 +68,14 @@ table, th, td {
     height: 2em;
 }
 th, td {
-    padding: .25em;
+    padding: .5em;
     min-width: 3.5em;
 }
 thead {
     background-color: gray;
     color: black;
-}
+} 
+
 tbody tr:nth-child(odd){
     background: white;
 }

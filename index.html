@@ -32,14 +32,14 @@
                     type="text">
                 <input id="annualSalary"
                     placeholder="Annual Salary"
-                    type="text">
+                    type="number">
                 <button class="submitButton">Submit</button>
             </form>
         </section>
 
         <section>
             <h3>Employees</h3>
-            <table>
+            <table id="employeeTable">
                 <thead>
                     <tr>
                         <th>First Name</th>
@@ -52,14 +52,15 @@
                 </thead>
 
                 <tbody id="tableBody">
-
+                    <tr class="emptyRow">
+                    </tr>
                 </tbody>
             </table>
         </section>
     </main>
 
     <footer>
-        <h3>Total Monthly:</h3>
+        <h3>Total Monthly:<span id="totalMonthly"> </span></h3>
     </footer>
     
 </body>
