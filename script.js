@@ -6,8 +6,6 @@ function onReady() {
     // Handlers go here
     $(".submitButton").on("click", handleSubmit);
     $("#tableBody").on("click", "#deleteButton", handleDelete);
-    // need handler here to delete total monthly sum?
-
 }
 
 // Create variable for total monthly salary amount
@@ -50,7 +48,7 @@ function handleSubmit(event) {
         <td>${lastNameText}</td>
         <td>${idNumberText}</td>
         <td>${jobTitleText}</td>
-        <td>${annualSalaryNumber}</td>
+        <td>${Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(annualSalaryNumber)}</td>
         <td><button id="deleteButton">Delete</button></td>
     </tr>`);
 
@@ -64,8 +62,11 @@ function handleSubmit(event) {
     // Set variable for monthly salary amount
     totalMonthly += annualSalaryNumber/12
 
+    // Check totalMonthly value
+    console.log(new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(totalMonthly));
+     
     // Replace salary amounts to total monthly footer
-    $('#totalMonthly').text(` $${totalMonthly}`);
+    $('#totalMonthly').text(` ${Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(totalMonthly)}`);
 
     // Create conditional that changes background color of total monthly amount when exceeds 20K
     if(totalMonthly > 20000) {
