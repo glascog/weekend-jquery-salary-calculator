@@ -15,6 +15,8 @@ let totalMonthly = 0;
 function handleDelete() {
     console.log("this is:", $(this))
     $(this).parent().parent().remove()
+
+    
 }
 
 function handleSubmit(event) {
