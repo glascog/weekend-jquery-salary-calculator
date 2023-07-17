@@ -74,7 +74,7 @@ th, td {
     min-width: 3.5em;
 }
 thead {
-    background-color:rgb(169, 207, 231);
+    background-color:rgb(187, 210, 224);
     color: black;
 }
 tbody tr:nth-child(odd){
@@ -84,5 +84,5 @@ tbody tr:nth-child(even){
     background: lightgray;
 }
 .blank-row {
-    height: 45px;
+    height: 25px;
 }
