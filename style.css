@@ -1,6 +1,6 @@
 /* Global Typography */
 body {
-    background-color: antiquewhite;
+    background-color:antiquewhite;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: black;
     font-size: 1.25em;
@@ -28,6 +28,7 @@ main {
 footer {
     height: 10em;
     text-align: right;
+    background-color: lightgrey;
 }
 
 /* Header/Footer */
@@ -39,6 +40,7 @@ header {
 }
 footer {
     text-align: right;
+    padding-right: 2em;
 }
 h1 {
     font-size: 2.75em;
@@ -72,13 +74,17 @@ th, td {
     min-width: 3.5em;
 }
 thead {
-    background-color: gray;
+    background-color:lightsteelblue;
     color: black;
-} 
-
+}
 tbody tr:nth-child(odd){
     background: white;
 }
 tbody tr:nth-child(even){
     background: lightgray;
+}
+
+.blankRow {
+    background-color: lightsteelblue;
+    height: 45px;
 }

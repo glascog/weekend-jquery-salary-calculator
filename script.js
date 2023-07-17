@@ -66,7 +66,7 @@ function handleSubmit(event) {
     console.log(new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(totalMonthly));
      
     // Replace salary amounts to total monthly footer
-    $('#totalMonthly').text(` ${Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(totalMonthly)}`);
+    $('#totalMonthly').text(` ${Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'}).format(totalMonthly)} `);
 
     // Create conditional that changes background color of total monthly amount when exceeds 20K
     if(totalMonthly > 20000) {
